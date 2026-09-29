@@ -124,7 +124,9 @@ function navigate(viewName) {
   if (!target) return;
   $$(".view").forEach((view) => view.classList.toggle("active", view === target));
   $$('[data-view]').forEach((button) => {
-    if (button.classList.contains("nav-item")) button.classList.toggle("active", button.dataset.view === viewName);
+    if (button.classList.contains("nav-item") && !button.classList.contains("quick-add")) {
+      button.classList.toggle("active", button.dataset.view === viewName);
+    }
   });
   $("#page-title").textContent = target.dataset.title || "Forma";
   window.scrollTo({ top: 0, behavior: "smooth" });

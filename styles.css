@@ -152,8 +152,24 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .form-grid { min-width: 0; margin-top: 23px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 label { min-width: 0; display: grid; gap: 7px; color: #bdc9c0; font-size: 11px; font-weight: 680; }
 input, select { width: 100%; height: 43px; padding: 0 12px; color: var(--text); background: #101713; border: 1px solid var(--line); border-radius: 11px; outline: none; transition: border-color .16s ease, box-shadow .16s ease, background .16s ease; }
-input[type="date"] { display: block; min-width: 0; max-width: 100%; inline-size: 100%; -webkit-appearance: none; appearance: none; }
-input[type="date"]::-webkit-date-and-time-value { min-width: 0; margin: 0; text-align: left; }
+input[type="date"] {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  inline-size: 100%;
+  line-height: 43px;
+  text-align: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="date"]::-webkit-date-and-time-value {
+  width: 100%;
+  min-width: 0;
+  height: 43px;
+  margin: 0;
+  line-height: 43px;
+  text-align: center;
+}
 input::placeholder { color: #59675e; }
 input:focus, select:focus { background: #111a14; border-color: rgba(166, 239, 103, .48); box-shadow: 0 0 0 3px rgba(166, 239, 103, .08); }
 select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #76847a 50%), linear-gradient(135deg, #76847a 50%, transparent 50%); background-position: calc(100% - 17px) 18px, calc(100% - 12px) 18px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 30px; }
@@ -316,6 +332,8 @@ td strong { color: var(--text); font-size: 12px; }
   .mobile-nav .nav-item svg { width: 19px; height: 19px; }
   .mobile-nav .nav-item:first-child svg { fill: currentColor; stroke: none; }
   .mobile-nav .quick-add { width: 48px; height: 48px; min-height: 48px; margin: -28px auto 0; color: #10180f; background: var(--green); border-radius: 16px; box-shadow: 0 8px 24px rgba(166, 239, 103, .2); }
+  .mobile-nav .nav-item.quick-add,
+  .mobile-nav .nav-item.quick-add.active { color: #10180f; }
   .mobile-nav .quick-add svg { width: 23px; height: 23px; }
   .toast { right: 16px; bottom: calc(84px + env(safe-area-inset-bottom)); }
 }
